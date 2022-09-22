@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">IMC Calculator</string>
+    <string name="etHeight_hint">Height (Meters)</string>
+    <string name="etWeight_txt">Weight (Pounds)</string>
+    <string name="imgHeight_Desc">Image Height</string>
+    <string name="imgWight_Desc">Weight Image</string>
+    <string name="rbMasculine_txt">Man</string>
+    <string name="rbFeminine_txt">Woman</string>
+    <string name="tvGender_txt">Gender</string>
+    <string name="btCalculate_txt">Calculate</string>
+    <string name="txtA">Abaixo do peso</string>
+    <string name="txtB">No peso normal</string>
+    <string name="txtC">Marginalmente acima do peso</string>
+    <string name="txtD">Acima do peso ideal</string>
+    <string name="txtE">Obeso</string>
+    <string name="txtWriteAll">Put All Datas</string>
+</resources>
