@@ -14,86 +14,39 @@ class MainActivity : AppCompatActivity() {
 
         val buttonCalculate = binding.btCalculate
 
+        fun writeToast(text: String) {
+            Toast.makeText(baseContext, text, Toast.LENGTH_LONG).show()
+        }
+
         buttonCalculate.setOnClickListener {
 
             val height = binding.etHeight.text.toString()
             val weight = binding.etWeight.text.toString()
 
             if (height.isNotEmpty() && weight.isNotEmpty()) {
-                val imc = (weight.toFloat() / (height.toFloat() * height.toFloat()))
-                println(imc)
+
+                val result = (weight.toFloat() / (height.toFloat() * height.toFloat()))
 
                 when (binding.rbSexGroup.checkedRadioButtonId) {
+
                     R.id.rbMasculine -> {
-                        if (imc < 20.7) {
-                            Toast.makeText(baseContext, getString(R.string.txtA), Toast.LENGTH_LONG)
-                                .show()
-                        } else if (imc < 26.4) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtB),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else if (imc < 27.8) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtC),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else if (imc < 32.2) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtD),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtE),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                        if (result < 20.7) writeToast(getString(R.string.txtA))
+                        else if (result < 26.4) writeToast(getString(R.string.txtB))
+                        else if (result < 27.8) writeToast(getString(R.string.txtC))
+                        else if (result < 32.2) writeToast(getString(R.string.txtD))
+                        else writeToast(getString(R.string.txtE))
+
                     }
+
                     R.id.rbFeminine -> {
-                        if (imc < 19.1) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtA),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else if (imc < 25.8) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtB),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else if (imc < 27.3) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtC),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else if (imc < 31.1) {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtD),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                baseContext,
-                                getString(R.string.txtE),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                        if (result < 19.1) writeToast(getString(R.string.txtA))
+                        else if (result < 25.8) writeToast(getString(R.string.txtB))
+                        else if (result < 27.3) writeToast(getString(R.string.txtC))
+                        else if (result < 31.1) writeToast(getString(R.string.txtD))
+                        else writeToast(getString(R.string.txtE))
                     }
                 }
-            } else {
-                Toast.makeText(baseContext, getString(R.string.txtWriteAll), Toast.LENGTH_SHORT)
-                    .show()
-            }
-
-
+            } else writeToast(getString(R.string.txtWriteAll))
         }
     }
 }
