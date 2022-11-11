@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     tools:context=".MainActivity">
 
     <EditText
@@ -18,7 +20,7 @@
         android:background="#CCCC"
         android:ems="10"
         android:hint="@string/etHeight_hint"
-        android:inputType="numberSigned|number|numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:paddingStart="5dp"
         android:paddingLeft="5dp"
         app:layout_constraintEnd_toEndOf="parent"
